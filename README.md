@@ -8,7 +8,6 @@ First name
 Last name 
 Date of birth 
 Postal code (ZIP)
----------------------------***----------------------
 
 steps:
 
