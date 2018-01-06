@@ -1,0 +1,77 @@
+
+This is what the REST API does:
+
+    Obs: I added an Id as primary key 
+    
+    GET request to:    task/getAll  -- > returns a list of members
+
+    GET request to:   /task/getMember/id   -->   returns the member with given id
+
+    POST request to:  /task/createMember   --->  with a member object as JSON creates a new member
+
+
+    PUT request to:   /task/updateMember/id   ---> with a member object as JSON updates the member with given id
+
+    DELETE request to:  /task/deleteMember/id  --->  deletes a  member with give id
+
+    DELETE request to:  /task/deleteAll/      ----> deletes all the members
+
+/*********************************************////////////***********************************************************
+
+How to run the application:
+
+ folder: task
+ packing name: task-0.0.1.jar
+ Json format:  {"firstName":"","lastName": "","dateOfBirth": "","postalCode": ""}
+
+-------------------------------------------------------------------------------------------------------------------------------
+obs: verify that port 8080 is not in use before runnng the application.
+
+In terminal ou command line run the aplication using:
+ 
+task/target/task-0.0.1.jar 
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+Use curl commands for queries, for instance:   
+
+# 1.  create some members:
+
+curl -H "Content-Type: application/json" -X POST -d '{"firstName":"Antonio","lastName":"Mabiala", "dateOfBirth": "2000-10-10", "postalCode":"76308"}' \http://localhost:8080/task/createMember
+----------------------------------------------------------------------------------------------------------------------------------
+# 2 check inserted members
+curl -H "Content-Type: application/json" -X GET http://localhost:8080/task/getAll
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+# 3. read member with ID 1
+curl -H "Content-Type: application/json" -X GET http://localhost:8080/task/getMember/1
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+# 4. update member with ID 1
+
+curl -H "Content-Type: application/json" -X PUT -d '{"firstName":"Jose Eduardo","lastName":"dos Santos", "dateOfBirth": "1866-06-06", "postalCode":"00000"}' \http://localhost:8080/task/updateMember/1
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+#5. delete a member by ID
+curl -H "Content-Type: application/json" -X DELETE http://localhost:8080/task/deleteMember/1
+
+#6. delete a member all members
+curl -H "Content-Type: application/json" -X DELETE http://localhost:8080/task/deleteAll
+------------------------------------------------------------------------------------------------------------------------------------
+Using an IDE:
+
+1. import the project as maven project and run.
+
+2. Use and external RestClient to query the URLs
+------------------------------------------------------------------------------------------------------------------------------------
+
+ 
+By: Antonio Mabila
+
+
+   
+
+
