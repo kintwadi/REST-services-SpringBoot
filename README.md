@@ -17,13 +17,12 @@ steps:
     Error handling via HTTP status code and specific message constraints
     Data storage: (in memory) database (derby)
 
-----------------------------***----------------------
 
 Evironment and tools 
 IDE: eclipse 
 Dependecy: Maven 
 version: JDK8/JDK9
-------------------------**----------------------------
+
 
 Sample: Use curl commands for queries, for instance:
 1. create some members:
